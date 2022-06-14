@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright (c) 2022. All rights reserved.
+ * @author: Volodymyr Hryvinskyi <mailto:volodymyr@hryvinskyi.com>
+ */
+
+/** @var \Magento\Backend\Block\Template $block */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+
+?>
+<p>
+    <button id="flushJSBundlingCache" type="button">
+        <?= $block->escapeHtml(__('Flush Js Bundling Cache')); ?>
+    </button>
+    <?= /* @noEscape */ $secureRenderer->renderEventListenerAsTag(
+        'onclick',
+        'setLocation(\'' . $block->escapeJs($block->getUrl('hryvinskyipagespeed/cache/flushJsBundling')) . '\')',
+        'button#flushJSBundlingCache'
+    ) ?>
+    <span><?= $block->escapeHtml(__('The cache for js bundling will be cleared.')); ?></span>
+</p>

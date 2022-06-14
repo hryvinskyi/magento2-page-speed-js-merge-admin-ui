@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) 2020-2022. All rights reserved.
+  ~ @author: Volodymyr Hryvinskyi <mailto:volodymyr@hryvinskyi.com>
+  -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="cache.additional">
+                <block class="Magento\Backend\Block\Template"
+                       name="adminhtml.js.clean.cache" template="Hryvinskyi_PageSpeedJsMergeAdminUi::system/cache/flush-cache.phtml"/>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>
